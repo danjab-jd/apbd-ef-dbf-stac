@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 #nullable disable
 
-namespace DbFirst.Entites
+namespace DbFirst.Entities
 {
     public partial class Author
     {

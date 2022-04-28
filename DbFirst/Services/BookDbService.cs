@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DbFirst.DTO;
-using DbFirst.Entites;
+using DbFirst.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DbFirst.Services
@@ -20,7 +20,7 @@ namespace DbFirst.Services
         {
             /*
              * await _context.Trips
-             * .Include(x => x.ClientTrips).ThenInclude(x => x.IdClientNavigation)           * 
+             * .Include(x => x.ClientTrips).ThenInclude(x => x.IdClientNavigation)
              * 
              */
 
@@ -47,12 +47,19 @@ namespace DbFirst.Services
 
         public async Task AddBookAsync(BookDTO bookDTO)
         {
+            // Single - w kolekcji znajduje się MAX. 1 element, który spełnia zapytanie - jeżeli nie ma żadnego - Exception
+            // First - w kolekcji znajduje się WIĘCEJ NIŻ 1 element, które spełniają zapytanie.
+            //         W wyniku zostanie pobrany pierwszy obiekt "z brzegu" - jeżeli nei ma żadnego - Exception
+
+            // SingleOrDefault/FirstOrDefault - takie samo zachowanie jak przy Single/First,
+            //                                  ale gdy nie ma żadnego obiektu spełniającego zapytanie zwróci null
+            
             Author authorFromDb = await _context.Authors
                 .SingleOrDefaultAsync(x => x.IdAuthor == bookDTO.Author.IdAuthor);
 
             if(authorFromDb == null)
             {
-                // Nie ma autora
+                // Nie ma autora - dopisanie jakiejś logiki, np. zwracanie odpowiedniego obiektu
                 return;
             }
 

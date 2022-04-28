@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DbFirst.DTO;
-using DbFirst.Entites;
 using DbFirst.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +25,14 @@ namespace DbFirst.Controllers
          * 
          * Tylko Rider:
          * EntityFrameworkCore.Tools.DotNet
-         * 
+         * EntityFrameworkCore.Design
+         */
+
+        
+        /* PROSZĘ PAMIĘTAĆ O ZMIANIE NAZWY INITIAL CATALOG (BAZY DANYCH)!!!!
+           
+           Scaffold-DbContext "Data Source=db-mssql;Initial Catalog=jd;Integrated Security" Microsoft.EntityFrameworkCore.SqlServer
+           -OutputDir Entities -Tables CityDict,Author,Book
          */
 
         [HttpGet]

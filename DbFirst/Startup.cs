@@ -10,8 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DbFirst.Entities;
 using DbFirst.Services;
-using DbFirst.Entites;
 using Microsoft.EntityFrameworkCore;
 
 namespace DbFirst

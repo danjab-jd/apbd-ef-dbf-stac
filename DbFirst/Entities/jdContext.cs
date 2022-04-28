@@ -1,10 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace DbFirst.Entites
+namespace DbFirst.Entities
 {
     public partial class jdContext : DbContext
     {
