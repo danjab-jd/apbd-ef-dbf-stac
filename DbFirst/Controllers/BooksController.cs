@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DbFirst.DTO;
+using DbFirst.Entities;
 using DbFirst.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,16 @@ namespace DbFirst.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
+        /*
+         * Dla VS + Rider:
+         * EntityFrameworkCore
+         * EntityFrameworkCore.SqlServer
+         * EntityFrameworkCore.Tools
+         * 
+         * Dla Ridera:
+         * EntityFrameworkCore.Tools.DotNet
+         * 
+         */
         private readonly IBookDbService _bookDbService;
 
         public BooksController(IBookDbService bookDbService)
