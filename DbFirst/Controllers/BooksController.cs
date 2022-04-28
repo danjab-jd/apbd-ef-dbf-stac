@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DbFirst.DTO;
+using DbFirst.Entites;
 using DbFirst.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,16 @@ namespace DbFirst.Controllers
             _bookDbService = bookDbService;
         }
 
+        /*
+         * VS i Rider:
+         * EntityFrameworkCore
+         * EntityFrameworkCore.SqlServer
+         * EntityFrameworkCore.Tools
+         * 
+         * Tylko Rider:
+         * EntityFrameworkCore.Tools.DotNet
+         * 
+         */
 
         [HttpGet]
         public async Task<IActionResult> GetBooksList()
