@@ -31,7 +31,7 @@ namespace DbFirst.Controllers
         
         /* PROSZĘ PAMIĘTAĆ O ZMIANIE NAZWY INITIAL CATALOG (BAZY DANYCH)!!!!
            
-           Scaffold-DbContext "Data Source=db-mssql;Initial Catalog=jd;Integrated Security" Microsoft.EntityFrameworkCore.SqlServer
+           Scaffold-DbContext "Data Source=db-mssql;Initial Catalog=jd;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer
            -OutputDir Entities -Tables CityDict,Author,Book
          */
 
