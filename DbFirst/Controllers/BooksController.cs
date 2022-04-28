@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DbFirst.DTO;
+using DbFirst.Entities;
 using DbFirst.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,21 @@ namespace DbFirst.Controllers
             _bookDbService = bookDbService;
         }
 
+        /*
+         * VS i Rider:
+         * EntityFrameworkCore
+         * EntityFrameworkCore.SqlServer
+         * EntityFrameworkCore.Tools
+         * 
+         * Tylko dla Ridera:
+         * EntityFrameworkCore.Tools.DotNet
+         * EntityFrameworkCore.Design
+         */
+
+        /*
+         * Scaffold-DbContext "Data Source=db-mssql;Initial Catalog=jd;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer 
+         * -OutputDir Entities -Tables CityDict,Author,Book
+         */
 
         [HttpGet]
         public async Task<IActionResult> GetBooksList()
