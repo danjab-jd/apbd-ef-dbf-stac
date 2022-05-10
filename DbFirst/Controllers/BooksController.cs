@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DbFirst.DTO;
+using DbFirst.Entities;
 using DbFirst.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,18 @@ namespace DbFirst.Controllers
         {
             _bookDbService = bookDbService;
         }
+
+        /*
+         * Dla VS i Ridera:
+         * EntityFrameworkCore
+         * EntityFrameworkCore.SqlServer
+         * EntityFrameworkCore.Tools
+         * 
+         * Dla Ridera:
+         * EntityFrameworkCore.Tools.DotNet
+         * EntityFrameworkCore.Design
+         * 
+         */
 
 
         [HttpGet]
