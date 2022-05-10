@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DbFirst.Services;
+using DbFirst.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DbFirst
 {
@@ -27,6 +29,12 @@ namespace DbFirst
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBookDbService, BookDbService>();
+
+            services.AddDbContext<jdContext>(opt =>
+            {
+                opt.UseSqlServer(Configuration.GetConnectionString("DbConn"));
+            });
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
